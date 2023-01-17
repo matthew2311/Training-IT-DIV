@@ -2,12 +2,15 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Test from './Test';
+import Hello from './Hello';
 
 function App() {
+  // console.log("Training-it-div")
   return (
     <div className="App">
       <header className="App-header">
         <Test />
+        <Hello />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

@@ -3,9 +3,7 @@ import './App.css';
 
 function Test() {
   return (
-    <div className="App">
-        <h1>Training IT DIV</h1>
-    </div>
+    <h1>Training IT DIV</h1> // alt + shift + f
   );
 }
 
