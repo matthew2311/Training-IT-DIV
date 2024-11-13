@@ -1,6 +1,15 @@
 import "./App.css";
 import ClassComponent from "./components/class/Class";
 import FunctionalComponent from "./components/functional/Functional";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Navbar from "./components/Navbar";
+import NotFound from "./Pages/NotFound";
+import axios from "axios";
+import moment from "moment";
+import TodoList from "./components/TodoList";
+import TodoListDetail from "./components/TodoListDetail";
 
 // Data Types
 // 1. Number
@@ -188,36 +197,103 @@ import FunctionalComponent from "./components/functional/Functional";
 
 function App() {
 
-  const functionDummy = (value: string) => {
-    console.log('belajar react js')
+  // const functionDummy = (value: string) => {
+  //   console.log('belajar react js')
 
-    return 'halo'
-  }
+  //   return 'halo'
+  // }
+
+  // const DemoApi = () => {
+  //   // //get
+  //   // axios.get('https://jsonplaceholder.typicode.com/users')
+  //   //   .then(res => console.log(res.data))
+  //   //   .catch(err => console.log(err))
+
+  //   // //post
+  //   // const payload = {
+  //   //   name: "Matthew",
+  //   //   email: "matthew@binus.ac.id"
+  //   // };
+
+  //   // axios.post('https://jsonplaceholder.typicode.com/users', payload)
+  //   //   .then(res => console.log(res.data))
+  //   //   .catch(err => console.log(err))
+
+  //   // //put
+  //   // axios.put('https://jsonplaceholder.typicode.com/users/1', {
+  //   //   name: "Matthew Update",
+  //   // })
+  //   //   .then(res => console.log(res.data))
+  //   //   .catch(err => console.log(err))
+
+  // }
+
+  // const DemoMoment = () => {
+
+  //   // const now = moment();
+
+  //   // const specificDate = moment("13-11-2024", "DD-MM-YYYY");
+
+  //   // const nextWeek = moment().add(1, 'weeks');
+
+  //   // const lastMonth = moment().subtract(1, 'months');
+
+  //   // const date1 = moment("2023-11-13");
+  //   // const date2 = moment("2024-11-13");
+  //   // const diff = date2.diff(date1, 'days');
+
+  //   const validateDate = moment("2023-02-29", "YYYY-MM-DD").isValid();
+    
+  //   console.log(validateDate);
+    
+  //   return (
+  //     <h1>{validateDate}</h1>
+  //   )
+  // }
 
   return (
-    <div className="App">
-      <ClassComponent
-        title="Halo Class Component"
-        isShow={true}
-        numberArray={[]}
-        stringArray={[
-          'title 1',
-          'title 2',
-          'title 3',
-          'title 4',
-        ]}
-        testObject={{
-          varString: 'test',
-          varNumber: 0,
-          varBoolean: true
-        }}
-        testObjectArray={[]}
-        testFunc={functionDummy}
-      />
-      <FunctionalComponent
-        title='Halo functional component'
-      />
-    </div>
+    // <div className="App">
+    //   // Lifecycle, class & functional components
+    //   {/* <ClassComponent
+    //     title="Halo Class Component"
+    //     isShow={true}
+    //     numberArray={[]}
+    //     stringArray={[
+    //       'title 1',
+    //       'title 2',
+    //       'title 3',
+    //       'title 4',
+    //     ]}
+    //     testObject={{
+    //       varString: 'test',
+    //       varNumber: 0,
+    //       varBoolean: true
+    //     }}
+    //     testObjectArray={[]}
+    //     testFunc={functionDummy}
+    //   />
+    //   <FunctionalComponent
+    //     title='Halo functional component'
+    //   /> */}
+    // </div>
+    // <BrowserRouter>
+    //   <Navbar />
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/about" element={<About />} />
+    //     <Route path="*" element={<NotFound/>}></Route>
+    //   </Routes>
+    // </BrowserRouter>
+    // <button onClick={DemoApi}>Hit Api</button>
+    // <DemoMoment></DemoMoment>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TodoList />}></Route>
+        <Route path = '/tododetail/:id' element={<TodoListDetail />}></Route>
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
