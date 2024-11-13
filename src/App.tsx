@@ -1,6 +1,6 @@
-// import logo from "./logo.svg";
-// import "./App.css";
-// import Welcome from "./component/Welcome";
+import "./App.css";
+import ClassComponent from "./components/class/Class";
+import FunctionalComponent from "./components/functional/Functional";
 
 // Data Types
 // 1. Number
@@ -187,11 +187,36 @@
 // hallo("Matthew");
 
 function App() {
+
+  const functionDummy = (value: string) => {
+    console.log('belajar react js')
+
+    return 'halo'
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <div>Hello</div>
-      </header>
+      <ClassComponent
+        title="Halo Class Component"
+        isShow={true}
+        numberArray={[]}
+        stringArray={[
+          'title 1',
+          'title 2',
+          'title 3',
+          'title 4',
+        ]}
+        testObject={{
+          varString: 'test',
+          varNumber: 0,
+          varBoolean: true
+        }}
+        testObjectArray={[]}
+        testFunc={functionDummy}
+      />
+      <FunctionalComponent
+        title='Halo functional component'
+      />
     </div>
   );
 }
